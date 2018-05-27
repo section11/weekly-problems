@@ -50,10 +50,18 @@ members.addEventListener('click', function(e) {
       .then(function(profile_json) {
         // Diagnostic; output the login value
         console.log('Login', profile_json.login);
-
-        // TODO: Insert the parts of the JSON data we want in the `template` HTML and
-        // append it to the profile `<blockquote id="profile">`
-        // TODO: Display the username (`login`) in case a team member has not set a profile name
+      
+  	var clone = document.importNode(template.content, true);
+	if(profile_json.name === null){
+		clone.querySelector('#name').textContent= profile_json.login;
+	}else{
+		clone.querySelector('#name').textContent = profile_json.name;
+	}
+	clone.querySelector('#avatar_url').src = profile_json.avatar_url;
+	clone.querySelector('#public_repos').textContent = profile_json.public_repos;
+	// append it to the profile `<blockquote id="profile">`
+     	profile.appendChild(clone);
+      
       });
   }
 });
