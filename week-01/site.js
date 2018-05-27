@@ -45,7 +45,7 @@ members.addEventListener('click', function(e) {
   // Diagnostic: this will let you play with the event.target object in the console and see what
   // properties and methods it responds to.
   target = e.target;
-
+  
   // We're only interested in clicks on `<a>` elements:
   if (e.target.nodeName.toLowerCase() == 'a') {
     // Don't let the web browser follow the link
@@ -55,7 +55,7 @@ members.addEventListener('click', function(e) {
 
     // TODO: Somehow isolate the last chunk of the GitHub profile URL, which contains the username
     // https://github.com/<username>. The full URL is a string at `e.target.href`:
-    username = '';
+    username = e.target.href.split("/")[3];
 
     // Diagnostic: log the username value
     console.log('Username value:', username);
