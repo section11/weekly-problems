@@ -50,12 +50,21 @@ members.addEventListener('click', function(e) {
       .then(function(profile_json) {
         // Diagnostic; output the login value
         console.log('Login', profile_json.login);
-      
+     	
+	//Check to see if there are existing child nodes, from a previous record append. 
+	//If so....
+	if(profile.hasChildNodes()){
+	  // ....keep removing the first child node untill
+          // there are none left;
+	  while(profile.hasChildNodes()){
+	    profile.removeChild(profile.firstChild);
+	  }
+	}
   	var clone = document.importNode(template.content, true);
 	if(profile_json.name === null){
-		clone.querySelector('#name').textContent= profile_json.login;
+	  clone.querySelector('#name').textContent= profile_json.login;
 	}else{
-		clone.querySelector('#name').textContent = profile_json.name;
+	  clone.querySelector('#name').textContent = profile_json.name;
 	}
 	clone.querySelector('#avatar_url').src = profile_json.avatar_url;
 	clone.querySelector('#public_repos').textContent = profile_json.public_repos;
