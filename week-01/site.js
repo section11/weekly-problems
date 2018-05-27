@@ -1,30 +1,3 @@
-/*
-
-This first Weekly Problem drops you right into HTML & JavaScript.
-
-The `index.html` file, which you do not need to edit, contains an unordered list of usernames
-linked to GitHub profiles for everyone in the class. It also uses a tag you might not have seen
-before: `<template>`, https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template
-
-You'll use native JavaScript to listen for a click event on any one of those links, prevent the
-default link-following behavior, and hit the GitHub API to return JSON data for the profile whose
-link a user clicked. You'll then display the data as set forth in the `<template>` tag at the bottom
-of the HTML file, and append it to the `<blockquote>` element.
-
-For example, Stolley's main GitHub profile is a JSON object at this API endpoint:
-https://api.github.com/users/karlstolley
-
-I've sketched out some starter portions of the code below. Be sure to work on this yourself, and
-discuss your work--and the places that you get stuck--on Basecamp as you're working on the
-problem. Note: to keep this as backward-compatibile as possible, I'm using `var` and no fancy
-ES6 stuff.
-
-Finally, be sure to run `http-server` so you're serving this at `localhost:8080`--if you choose
-File > Open, you will not be able to run requests with Fetch. Be sure also that you have your
-JavaScript console open so you can benefit from calls to `console.log()` and other diagnostics.
-
-*/
-
 // Grab the members element
 var members = document.getElementById('members');
 // Diagnostic variable to hold the event target in the global scope, oustide the event-handler
@@ -53,7 +26,6 @@ members.addEventListener('click', function(e) {
     // Diagnostic: log the clicked `<a>` element's `href` value
     console.log(e.target.href, 'clicked');
 
-    // TODO: Somehow isolate the last chunk of the GitHub profile URL, which contains the username
     // https://github.com/<username>. The full URL is a string at `e.target.href`:
     username = e.target.href.split("/")[3];
 
@@ -66,14 +38,10 @@ members.addEventListener('click', function(e) {
     // Diagnostic: log the request URL value
     console.log('Request URL value:', request_url);
 
-    // TODO: Use the Fetch() API to retrieve the data from the GitHub API
     // Docs:
     //   - https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
     //   - https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 
-    // This block commented with stars so you can get things above working first:
-
-    /*
     fetch(request_url)
       .then(function(data) {
         // Parse the returned data as JSON:
@@ -87,6 +55,5 @@ members.addEventListener('click', function(e) {
         // append it to the profile `<blockquote id="profile">`
         // TODO: Display the username (`login`) in case a team member has not set a profile name
       });
-    */
   }
 });
