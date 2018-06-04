@@ -1,0 +1,11 @@
+{
+  "name": "week-02",
+  "version": "1.0.0",
+  "description": "For this week’s weekly problem, you’re going to hit the GitHub API again --  but from the server side using Node.js. Your task is to access your own GitHub profile via the API, and write the raw JSON response to a file called `response.json` here in your `week-02/` directory.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
