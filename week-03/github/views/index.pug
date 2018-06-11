@@ -1,5 +1,12 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1= title + ' of '+ profile.login
+  ul
+   li=  profile.login + ' - ' +  profile.id
+   li= 'node id' + profile.node_id
+   li  #[a(href=profile.html_url): img(src=profile.avatar_url)]
+  ul/
+  each val, key in profile
+    li=key + ' ' + val
+  
