@@ -1,0 +1,114 @@
+GET subjects/
+
+{
+  "subjects": [
+    {
+      "id": "1",
+      “name": “Business”,
+    },
+    {
+      "id": "2",
+      "name": “Chemistry",
+    },
+    {
+      "id": "3",
+      “name": “Computer Science”,
+    },
+    {
+      "id": "4",
+      “name": “Economics”,
+    },
+    {
+      "id": "5",
+      “name": “History”,
+    },
+  ]
+}
+
+GET classes/:subjectid
+GET classes/3
+{
+  “classes”:[
+    {
+      “id”: “54213”,
+      “number”: “100”,
+      “name”: “Intro to the Profession”
+    },
+    {
+      “id”: “51213”,
+      “number”: “330”,
+      “name”: “Discrete Structures”
+    },
+    {
+      “id”: “61943”,
+      “number”: “422”,
+      “name”:“Data mining”
+    },
+    {
+      “id”: “35193”,
+      “number”: “487”,
+      “name”: “Software Engineering”
+    },
+    {
+      “id”: “69407”,
+      “number”: “512”,
+      “name”: “Computer vision”
+    },
+  ]
+}
+
+
+GET class/:classid
+GET class/69407
+{
+  “sections”: [
+    {
+       “id”: “9812304”,
+       “CRN”: “19949”,
+       “major’: “CS”,
+       “number”: “01”,
+       “campus”: “MC”,
+       “credits”: “3”,
+       “title”: “Computer Vision”,
+       “days”: [“T”, “R”],
+       “time_start”: “05:00pm”,
+       “time_end”: “06:15pm”,
+       “instructor_name”: “Gady Agam”,
+       “location”: “SB 104”,
+       “date_start”: “08/20”,
+       “date_end”: “12/01”
+    },
+    {
+       “id”: “9812305”,
+       “CRN”: “19950”,
+       “major’: “CS”,
+       “number”: “02”,
+       “campus”: “IN”,
+       “credits”: “3”,
+       “title”: “Computer Vision”,
+       “days”: [],
+       “time_start”: “TBA”,
+       “time_end”: “TBA”,
+       “instructor_name”: “Gady Agam”,
+       “location”: “TBA”,
+       “date_start”: “08/20”,
+       “date_end”: “12/01”
+    },
+    {
+       “id”: “9812306”,
+       “CRN”: “40137”,
+       “major’: “CS”,
+       “number”: “03”,
+       “campus”: “II”,
+       “credits”: “3”,
+       “title”: “Computer Vision”,
+       “days”: [],
+       “time_start”: “TBA”,
+       “time_end”: “TBA”,
+       “instructor_name”: “Gady Agam”,
+       “location”: “TBA”,
+       “date_start”: “08/20”,
+       “date_end”: “12/01”
+    },
+  ]
+}
